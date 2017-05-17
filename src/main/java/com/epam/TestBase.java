@@ -1,7 +1,9 @@
 package com.epam;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 
 /**
  * Created by Roman_Nikolaev on 5/11/2017.
@@ -26,7 +28,10 @@ public class TestBase
     }
 
     public void assertTrue(boolean someBool){
+        Assert.assertTrue(someBool);
+    }
 
-
+    public void setSize(int width, int height){
+        driver.manage().window().setSize(new Dimension(width, height));
     }
 }

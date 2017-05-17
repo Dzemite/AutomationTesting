@@ -22,6 +22,6 @@ public class MainPage extends PageFactory{
         return obj;
     }
 
-    @FindBy(className="profile-photo")
+    @FindBy(className="header-services-profile")
     public static WebElement loginDropdown;
 }

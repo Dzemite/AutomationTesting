@@ -1,5 +1,6 @@
 package com.epam.pageobject;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 /**
@@ -7,11 +8,16 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class Page<T> extends PageFactory {
 
-//    static T obj;
-//
-//    public void T get() {
-//        if (obj != null) return obj;
-//        obj = new T();
-//    }
+    T obj;
+
+    public T get(WebDriver driver) {
+        if (obj != null) {
+            initElements(driver, obj);
+            return obj;
+        }
+        obj = (T) new Page();
+        initElements(driver, obj);
+        return obj;
+    }
 
 }

@@ -1,5 +1,6 @@
 package homeWork_2;
 
+import com.epam.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,20 +14,16 @@ import org.testng.annotations.Test;
 /**
  * Created by Roman_Nikolaev on 5/11/2017.
  */
-public class testLogin {
-
-    WebDriver driver;
+public class testLogin extends TestBase {
 
     @BeforeTest
     public void before() {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Roman_Nikolaev\\Downloads\\geckodriver-v0.16.1-win64\\geckodriver.exe");
-        driver = new FirefoxDriver();
-        System.out.println("before test");
+        init("https://www.avito.ru/sankt-peterburg");
     }
 
     @AfterTest
     public void after() {
-        //driver.close();
+        driver.close();
         System.out.println("after test");
     }
 

@@ -12,7 +12,7 @@ public class testInClass2 extends TestBase {
 
     @BeforeSuite
     public void setup() {
-        init("https://jdi-framework.github.io/tests/index.htm");
+        init("https://www.avito.ru/sankt-peterburg");
     }
 
     @AfterSuite
@@ -23,9 +23,12 @@ public class testInClass2 extends TestBase {
     @Test
     public void loginTast(){
         navigateToMainTest();
-        MainPage.get(driver).loginDropdown.click();
-        assertTrue(LoginPanel.LoginLable.isDisplayed());
-        //Assert.assertTrue();
-    }
 
+        System.out.println("Dropdown: " + MainPage.get(driver).loginDropdown);
+
+        MainPage.get(driver).loginDropdown.click();
+
+        System.out.println("Login form: " + LoginPanel.get(driver).LoginForm);
+        assertTrue(true);
+    }
 }

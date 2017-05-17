@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ApplicationName Suite" verbose="1" >
+    <test name="testWinSize" >
+        <classes>
+            <class name="homeWork_1.HomeworkTest" />
+        </classes>
+    </test>
+    <test name="test login">
+        <classes>
+            <class name="homeWork_2.testLogin"/>
+        </classes>
+    </test>
+</suite>
