@@ -1,5 +1,5 @@
 import com.epam.TestBase;
-import com.epam.pageobject.LoginPanel;
+import com.epam.pageobject.LoginPage;
 import com.epam.pageobject.MainPage;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -22,13 +22,13 @@ public class testInClass2 extends TestBase {
 
     @Test
     public void loginTast(){
-        navigateToMainTest();
-
-        System.out.println("Dropdown: " + MainPage.get(driver).loginDropdown);
-
-        MainPage.get(driver).loginDropdown.click();
-
-        System.out.println("Login form: " + LoginPanel.get(driver).LoginForm);
-        assertTrue(true);
+//        navigateToMainTest();
+//
+//        System.out.println("Dropdown: " + MainPage.get(driver).loginDropdown);
+//
+//        MainPage.get(driver).loginDropdown.click();
+//
+//        System.out.println("Login form: " + LoginPage.get(driver).LoginFormInput);
+//        assertTrue(true);
     }
 }

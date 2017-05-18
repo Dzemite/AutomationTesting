@@ -6,23 +6,26 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Created by Roman_Nikolaev on 5/11/2017.
+ * Created by Roman_Nikolaev on 5/18/2017.
  */
-public class LoginPanel extends PageFactory{
+public class UserPage extends Page{
 
-    static LoginPanel obj;
+    static UserPage obj;
 
-    public static LoginPanel get(WebDriver driver) {
+    private UserPage() {
+    }
+
+    public static UserPage get(WebDriver driver) {
         if (obj != null) {
             initElements(driver, obj);
             return obj;
         }
-        obj = new LoginPanel();
+        obj = new UserPage();
         initElements(driver, obj);
         return obj;
     }
 
-    @FindBy(className="login-form")
-    public static WebElement LoginForm;
+    @FindBy(className="header-services-profile__username")
+    public static WebElement loggedInUser;
 
 }

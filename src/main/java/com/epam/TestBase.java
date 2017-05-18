@@ -34,4 +34,13 @@ public class TestBase
     public void setSize(int width, int height){
         driver.manage().window().setSize(new Dimension(width, height));
     }
+
+    //Sorry for this =)
+    public void waitForLoad() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
