@@ -15,7 +15,7 @@ public class HomeworkTest extends TestBase {
 
     @AfterSuite
     public void after() {
-        driver.close();
+        cleanBrowser();
     }
 
     @Test

@@ -25,7 +25,7 @@ public class testLogin extends TestBase {
 
     @AfterSuite
     public void after() {
-        driver.close();
+        cleanBrowser();
     }
 
     @BeforeTest
@@ -33,7 +33,7 @@ public class testLogin extends TestBase {
         driver.manage().deleteAllCookies();
     }
 
-    //need CSV data provider
+    //TO DO: need CSV data provider
     @DataProvider
     public Object[][] correctData() {
         return new Object[][]{
@@ -51,7 +51,6 @@ public class testLogin extends TestBase {
     @Test(dataProvider = "correctData")
     public void _positiveLogin(String login, String pswd) {
         navigateToMainTest();
-
         MainPage.get(driver).logInBtn.click();
 
         waitForLoad();
@@ -62,11 +61,11 @@ public class testLogin extends TestBase {
 
         waitForLoad();
 
-        //Assert.assertEquals(UserPage.get(driver).loggedInUser.getText(), "Роман");
-        System.out.println(UserPage.get(driver).loggedInUser.getText());
+        Assert.assertEquals(UserPage.get(driver).loggedInUser.getText(), "Роман");
+
     }
 
-    @Test(dataProvider = "incorrectData")
+    @Test(dataProvider = "incorrectData", enabled=false)
     public void negativeLogin(String login, String pswd) {
         navigateToMainTest();
 
@@ -82,7 +81,7 @@ public class testLogin extends TestBase {
 
         String url = driver.getCurrentUrl();
 
-        //Assert.assertEquals(url, "https://www.avito.ru/profile/login");
+        Assert.assertEquals(url, "https://www.avito.ru/profile/login");
     }
 
 
